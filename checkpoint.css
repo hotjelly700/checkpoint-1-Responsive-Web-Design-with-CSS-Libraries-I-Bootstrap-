@@ -1,1 +1,208 @@
- 
+/* === GLOBAL STYLING === */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean, modern font */
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5; /* Light grey background for a soft and neutral tone */
+}
+
+/* === NAVIGATION BAR === */
+.navbar {
+    background-color: #0d6efd !important; /* Bootstrap primary blue */
+}
+.navbar .nav-link,
+.navbar .navbar-brand {
+    color: #fff !important; /* White text for contrast */
+    font-weight: 500; /* Slightly bold for readability */
+}
+.navbar .nav-link:hover {
+    text-decoration: underline; /* Hover effect to indicate interactivity */
+}
+.btn {
+    border: solid black;
+    color: black;
+}
+.btn:hover{
+    background-color: blue;
+    color: white;
+    border: solid transparent;
+}
+
+/* === SECTION HEADERS === */
+h1 {
+    padding: 40px 20px 20px;
+    font-size: 28px; /* Prominent section titles */
+    color: #0d6efd; /* Matches the brand blue */
+    border-bottom: 2px solid #0d6efd; /* Visually separates each section */
+    margin-bottom: 20px;
+}
+
+/* === PRODUCT SECTION GRID LAYOUT === */
+#products > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive column layout */
+    gap: 20px; /* Space between cards */
+    padding: 0 20px 40px;
+}
+
+/* === CARD STYLING (PRODUCT BOXES) === */
+.card, .card1, .card2, .card3, .card4 {
+    background-color: #ffffff; /* White background for contrast */
+    border-radius: 15px; /* Rounded corners for modern look */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Soft shadow for elevation */
+    padding: 20px;
+    transition: transform 0.3s ease; /* Smooth hover animation */
+    text-align: center;
+}
+.card:hover, .card1:hover, .card2:hover, .card3:hover, .card4:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+/* === CARD IMAGES === */
+.card img, .card1 img, .card2 img, .card3 img, .card4 img {
+    max-width: 100%;
+    height: 180px; /* Consistent height across all cards */
+    object-fit: contain; /* Maintains aspect ratio without cropping */
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* === CARD TITLES === */
+.card h3, .card1 h3, .card2 h3, .card3 h3, .card4 h3 {
+    color: #333; /* Dark grey for readability */
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* === SHOP NOW BUTTON === */
+button#button {
+    background-color: #0d6efd; /* Brand color */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px; /* Pill-shaped button */
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+button#button:hover {
+    background-color: #004bb1; /* Darker on hover for feedback */
+}
+
+/* === FOOTER STYLING === */
+footer {
+    background-color: #0d6efd;
+    color: white;
+    padding: 40px 20px;
+    margin-top: 60px;
+}
+
+/* === FOOTER COLUMNS (SHOP, SERVICE, ABOUT) === */
+.footer-links {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allows stacking on smaller screens */
+    margin-bottom: 30px;
+}
+.footer-links h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-links ul li {
+    margin: 5px 0;
+}
+.footer-links ul li a {
+    color: #f1f1f1; /* Soft white */
+    text-decoration: none;
+}
+.footer-links ul li a:hover {
+    text-decoration: underline; /* Hover feedback */
+}
+
+/* === FOOTER CONTACT INFO === */
+.footer-top {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+/* === FOOTER BOTTOM BAR === */
+.footer-bottom {
+    border-top: 1px solid #ffffff55; /* Subtle border line */
+    text-align: center;
+    padding-top: 15px;
+    font-size: 14px;
+}
+
+/* === SOCIAL ICONS === */
+.footer-bottom .social-icons {
+    margin-top: 10px;
+}
+.footer-bottom .social-icons a img {
+    width: 24px;
+    margin: 0 10px;
+    vertical-align: middle;
+}
+
+/* =============================== */
+/* 📱 MEDIA QUERIES FOR RESPONSIVENESS */
+/* =============================== */
+
+/* --- Tablet Devices --- */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    button#button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+/* --- Mobile Devices --- */
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column; /* Stack vertically */
+        align-items: center;
+        gap: 20px;
+    }
+
+    #products > div {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Smaller card width */
+        padding: 0 10px 30px;
+    }
+
+    .card img, .card1 img, .card2 img, .card3 img, .card4 img {
+        height: 150px; /* Slightly smaller images */
+    }
+}
+
+/* --- Small Mobile Devices --- */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .navbar .container-fluid {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .card img, .card1 img, .card2 img, .card3 img, .card4 img {
+        height: 130px;
+    }
+
+    .footer-top p {
+        font-size: 14px;
+    }
+
+    .footer-bottom {
+        font-size: 12px;
+    }
+}
